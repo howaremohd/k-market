@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>K-market – Everything You Need</title>
+  <meta name="description"
+    content="K-market: Millions of products with free delivery over $90. Shop office supplies, technology, furniture and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════ NAVBAR ═══════════════════════════════ -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo" id="logo">
+        <img src="logo.png" alt="K-market" class="logo-img" />
+        <span class="logo-text">K-market</span>
+      </a>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="#" class="nav-link active">Home</a>
+        <a href="#products" class="nav-link">Shop</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="feedback.html" class="nav-link">Feedback</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="nav-icon-btn" id="btn-user" aria-label="Account">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="8" r="4" />
+            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+          </svg>
+        </a>
+
+        <button class="nav-icon-btn cart-btn" id="btn-cart" aria-label="Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg>
+          <span class="cart-badge" id="cart-badge">3</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════ HERO ════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <!-- floating bg blobs -->
+    <div class="hero-blob blob-1"></div>
+    <div class="hero-blob blob-2"></div>
+
+
+    <div class="container hero-content">
+      <p class="hero-breadcrumb">Best Deals &nbsp;·&nbsp; Shop 2026</p>
+      <h1>
+        Welcome to K-market
+      </h1>
+      <h2 class="hero-title">Everything<br />You Need</h2>
+      <p class="hero-sub">Millions of products. Free delivery over $90.</p>
+      <a href="#products" class="btn btn-primary" id="btn-shop-now">Shop Now</a>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">2M+</span>
+          <span class="stat-label">Products</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">150K</span>
+          <span class="stat-label">Orders</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">4.9 ★</span>
+          <span class="stat-label">Rating</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">Free</span>
+          <span class="stat-label">Returns</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════ BROWSE CATEGORIES ═══════════════════════════ -->
+  <section class="categories section" id="categories">
+    <div class="container">
+      <h2 class="section-title">The Categorys</h2>
+
+      <div class="category-grid">
+        <a href="office-supplies.html" class="category-card" id="cat-office">
+          <div class="category-img-wrap">
+            <img src="office_sup.jpg" alt="Office Supplies"
+              onerror="this.parentElement.classList.add('img-placeholder')" />
+          </div>
+          <span class="category-name">Office Supplies</span>
+        </a>
+
+        <a href="technology.html" class="category-card featured" id="cat-tech">
+          <div class="category-img-wrap">
+            <img src="Technology.png" alt="Technology" onerror="this.parentElement.classList.add('img-placeholder')" />
+          </div>
+          <span class="category-name">Technology</span>
+        </a>
+
+        <a href="furniture.html" class="category-card" id="cat-furniture">
+          <div class="category-img-wrap">
+            <img src="furn.jpg" alt="Furniture" onerror="this.parentElement.classList.add('img-placeholder')" />
+          </div>
+          <span class="category-name">Furniture</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ FEATURES BAR ════════════════════════════ -->
+  <div class="features-bar">
+    <div class="container features-inner">
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4A90D9" stroke-width="1.8">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          </svg>
+        </div>
+        <div class="feature-text">
+          <strong>High Quality</strong>
+          <span>Crafted from top materials</span>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4A90D9" stroke-width="1.8">
+            <rect x="3" y="11" width="18" height="11" rx="2" />
+            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+          </svg>
+        </div>
+        <div class="feature-text">
+          <strong>Warranty Protection</strong>
+          <span>Over 2 years</span>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4A90D9" stroke-width="1.8">
+            <rect x="1" y="3" width="15" height="13" rx="1" />
+            <path d="M16 8h4l3 5v3h-7V8z" />
+            <circle cx="5.5" cy="18.5" r="2.5" />
+            <circle cx="18.5" cy="18.5" r="2.5" />
+          </svg>
+        </div>
+        <div class="feature-text">
+          <strong>Free Shipping</strong>
+          <span>Order over $150</span>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4A90D9" stroke-width="1.8">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.79a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16z" />
+          </svg>
+        </div>
+        <div class="feature-text">
+          <strong>24 / 7 Support</strong>
+          <span>Dedicated support</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════ OUR PRODUCTS ════════════════════════════ -->
+  <section class="products section" id="products">
+    <div class="container">
+      <h2 class="section-title">Our Products</h2>
+
+      <div class="products-grid" id="products-grid">
+
+        <!-- Product cards from various categories -->
+        <div class="product-card" data-category="laptops" data-color="space-gray" data-style="pro" data-price="1299">
+          <div class="product-img-wrap">
+            <img src="tec-pic/Pro Laptop 14.jfif" alt="Pro Laptop"
+              onerror="this.parentElement.classList.add('img-placeholder')" />
+            <button class="add-to-cart-btn" aria-label="Add to Cart">Add to Cart</button>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Pro Laptop 14"</h3>
+            <div class="product-rating">
+              <span class="stars">★★★★★</span>
+              <span class="rating-val">4.9/5</span>
+            </div>
+            <div class="product-price">
+              <span class="price-current">$1299</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="audio" data-color="white" data-style="wireless" data-price="199">
+          <div class="product-img-wrap">
+            <span class="badge badge-sale">-20%</span>
+            <img src="tec-pic/tec8.png" alt="Wireless Earbuds"
+              onerror="this.parentElement.classList.add('img-placeholder')" />
+            <button class="add-to-cart-btn" aria-label="Add to Cart">Add to Cart</button>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Wireless Noise-Canceling Earbuds</h3>
+            <div class="product-rating">
+              <span class="stars">★★★★☆</span>
+              <span class="rating-val">4.7/5</span>
+            </div>
+            <div class="product-price">
+              <span class="price-current">$199</span>
+              <span class="price-old">$249</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="tables" data-color="brown" data-style="rustic" data-price="599">
+          <div class="product-img-wrap">
+            <span class="badge badge-sale">-15%</span>
+            <img src="fur-pic/Solid Wood Dining Table.jfif" alt="Dining Table"
+              onerror="this.parentElement.classList.add('img-placeholder')" />
+            <button class="add-to-cart-btn" aria-label="Add to Cart">Add to Cart</button>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Solid Wood Dining Table</h3>
+            <div class="product-rating">
+              <span class="stars">★★★★★</span>
+              <span class="rating-val">4.8/5</span>
+            </div>
+            <div class="product-price">
+              <span class="price-current">$599</span>
+              <span class="price-old">$699</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="beds" data-color="beige" data-style="modern" data-price="450">
+          <div class="product-img-wrap">
+            <span class="badge badge-new">New</span>
+            <img src="fur-pic/Modern Platform Bed Frame.webp" alt="Bed Frame"
+              onerror="this.parentElement.classList.add('img-placeholder')" />
+            <button class="add-to-cart-btn" aria-label="Add to Cart">Add to Cart</button>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Modern Platform Bed Frame</h3>
+            <div class="product-rating">
+              <span class="stars">★★★★☆</span>
+              <span class="rating-val">4.5/5</span>
+            </div>
+            <div class="product-price">
+              <span class="price-current">$450</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="chairs" data-color="blue" data-style="vintage" data-price="799">
+          <div class="product-img-wrap">
+            <span class="badge badge-sale">Sale</span>
+            <img src="fur-pic/3-Seater Velvet Sofa.jfif" alt="Sofa"
+              onerror="this.parentElement.classList.add('img-placeholder')" />
+            <button class="add-to-cart-btn" aria-label="Add to Cart">Add to Cart</button>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">3-Seater Velvet Sofa</h3>
+            <div class="product-rating">
+              <span class="stars">★★★★★</span>
+              <span class="rating-val">4.9/5</span>
+            </div>
+            <div class="product-price">
+              <span class="price-current">$799</span>
+              <span class="price-old">$899</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="notebooks" data-color="black" data-style="executive" data-price="24">
+          <div class="product-img-wrap">
+            <img src="office-pic/Premium Leather Notebook.jfif" alt="Premium Leather Notebook"
+              onerror="this.parentElement.classList.add('img-placeholder')" />
+            <button class="add-to-cart-btn" aria-label="Add to Cart">Add to Cart</button>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Premium Leather Notebook</h3>
+            <div class="product-rating">
+              <span class="stars">★★★★★</span>
+              <span class="rating-val">4.9/5</span>
+            </div>
+            <div class="product-price">
+              <span class="price-current">$24.00</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="organizers" data-color="black" data-style="minimalist" data-price="32">
+          <div class="product-img-wrap">
+            <span class="badge badge-new">New</span>
+            <img src="office-pic/Metal Desk Organizer.jfif" alt="Metal Desk Organizer"
+              onerror="this.parentElement.classList.add('img-placeholder')" />
+            <button class="add-to-cart-btn" aria-label="Add to Cart">Add to Cart</button>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Metal Desk Organizer</h3>
+            <div class="product-rating">
+              <span class="stars">★★★★★</span>
+              <span class="rating-val">4.8/5</span>
+            </div>
+            <div class="product-price">
+              <span class="price-current">$32.00</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="pens" data-color="black" data-style="executive" data-price="45">
+          <div class="product-img-wrap">
+            <span class="badge badge-sale">-10%</span>
+            <img src="office-pic/Executive Pen Set.jfif" alt="Executive Pen Set"
+              onerror="this.parentElement.classList.add('img-placeholder')" />
+            <button class="add-to-cart-btn" aria-label="Add to Cart">Add to Cart</button>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Executive Pen Set</h3>
+            <div class="product-rating">
+              <span class="stars">★★★★☆</span>
+              <span class="rating-val">4.5/5</span>
+            </div>
+            <div class="product-price">
+              <span class="price-current">$45.00</span>
+              <span class="price-old">$50.00</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="show-more-wrap">
+        <button class="btn btn-outline" id="btn-show-more">Show More</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════ NEWSLETTER ══════════════════════════════ -->
+  <div class="newsletter-section">
+    <div class="container newsletter-inner">
+      <h2 class="newsletter-title">STAY UPTO DATE ABOUT<br />OUR LATEST OFFERS</h2>
+      <form class="newsletter-form" onsubmit="event.preventDefault()">
+        <div class="input-wrap">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
+          <input type="email" placeholder="Enter your email address" required />
+        </div>
+        <button type="submit" class="btn btn-subscribe">Subscribe to Newsletter</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+  <footer class="footer" id="contact">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-text">K-market</span>
+        <p>We have products that suit your style and which you're proud to own. From tech to home.</p>
+        <div class="social-icons">
+          <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.05c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z" />
+            </svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z" />
+            </svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.64-.07-4.85s.01-3.58.07-4.85C2.38 3.86 3.93 2.31 7.15 2.16c1.27-.06 1.65-.07 4.85-.07m0-2.16C8.74 0 8.33.01 7.05.07c-4.26.19-6.78 2.71-6.97 6.98C0 8.33 0 8.74 0 12s.01 3.67.07 4.95c.19 4.27 2.71 6.79 6.98 6.98C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c4.27-.19 6.79-2.71 6.98-6.98C23.99 15.67 24 15.26 24 12s-.01-3.67-.07-4.95c-.19-4.26-2.71-6.78-6.98-6.97C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm5.8-10.4a1.4 1.4 0 1 1-2.8 0 1.4 1.4 0 0 1 2.8 0z" />
+            </svg></a>
+          <a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.71c-2.78.61-3.37-1.34-3.37-1.34-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.58 9.58 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .26.18.58.69.48C19.13 20.17 22 16.42 22 12c0-5.52-4.48-10-10-10z" />
+            </svg></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>COMPANY</h4>
+        <a href="about.html">About</a>
+        <a href="#">Features</a>
+        <a href="#">Works</a>
+        <a href="#">Career</a>
+      </div>
+      <div class="footer-links">
+        <h4>HELP</h4>
+        <a href="#">Customer Support</a>
+        <a href="#">Delivery Details</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Privacy Policy</a>
+        <a href="feedback.html">Feedback</a>
+      </div>
+      <div class="footer-links">
+        <h4>FAQ</h4>
+        <a href="#">Account</a>
+        <a href="#">Manage Deliveries</a>
+        <a href="#">Orders</a>
+        <a href="#">Payments</a>
+      </div>
+      <div class="footer-links" id="about">
+        <h4>RESOURCES</h4>
+        <a href="#">Free eBooks</a>
+        <a href="#">Development Tutorial</a>
+        <a href="#">How to - Blog</a>
+        <a href="#">Youtube Playlist</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>K-market © 2000-2025, All Rights Reserved</p>
+      <div class="payment-icons">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" height="20">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" height="20">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" height="20">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Pay" height="20">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg" alt="Google Pay" height="20">
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

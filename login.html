@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Login - K-market</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="auth-page">
+    <div class="auth-container">
+      <div class="auth-left">
+        <div class="auth-form-wrap">
+          <a href="index.html" class="auth-logo">
+            <img src="logo.png" alt="K-market">
+          </a>
+
+          <div class="auth-header">
+            <h1 class="auth-title">Login</h1>
+            <p class="auth-subtitle">Login to access your K-market account</p>
+          </div>
+
+          <form class="auth-form" onsubmit="event.preventDefault(); window.location.href='index.html';">
+            <div class="form-group-outline">
+              <input type="email" id="email" required placeholder=" " value="john.doe@gmail.com">
+              <label for="email">Email</label>
+            </div>
+
+            <div class="form-group-outline">
+              <input type="password" id="password" required placeholder=" " value="••••••••••••••">
+              <label for="password">Password</label>
+              <button type="button" class="password-toggle" aria-label="Toggle password visibility"
+                onclick="const p = document.getElementById('password'); p.type = p.type === 'password' ? 'text' : 'password';">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <line x1="2" y1="2" x2="22" y2="22"></line>
+                </svg>
+              </button>
+            </div>
+
+            <div class="auth-options">
+              <label class="auth-checkbox">
+                <input type="checkbox">
+                <span>Remember me</span>
+              </label>
+              <a href="#" class="auth-link">Forgot Password</a>
+            </div>
+
+            <button type="submit" class="btn-auth">Login</button>
+
+            <div class="auth-footer">
+              Don't have an account? <a href="signup.html" class="auth-link">Sign up</a>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="auth-right">
+        <div class="auth-img-wrap">
+          <img src="login (2).png" alt="Login Security Illustration"
+            onerror="this.src='logo.png'; this.style.opacity='0.1';">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

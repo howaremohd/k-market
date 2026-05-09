@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Cart - K-market</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="cart.css" />
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════ NAVBAR ═══════════════════════════════ -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
+        <img src="logo.png" alt="K-market" class="logo-img" />
+        <span class="logo-text">K-market</span>
+      </a>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="index.html#products" class="nav-link">Shop</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="feedback.html" class="nav-link">Feedback</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="nav-icon-btn" id="btn-user" aria-label="Account">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="8" r="4" />
+            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+          </svg>
+        </a>
+
+        <button class="nav-icon-btn cart-btn" id="btn-cart" aria-label="Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg>
+          <span class="cart-badge" id="cart-badge">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12h18M3 6h18M3 18h18" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═════════════════════════════ CART SECTION ══════════════════════════════ -->
+  <main class="cart-page">
+    <div class="container">
+      <div class="cart-header">
+        <h1>Shopping Cart</h1>
+      </div>
+
+      <div class="cart-container" id="cart-container">
+        <!-- Cart Items -->
+        <div class="cart-items" id="cart-items">
+          <!-- Items will be injected here via JS -->
+        </div>
+
+        <!-- Order Summary -->
+        <aside class="cart-summary">
+          <h2 class="summary-title">Order Summary</h2>
+          <div class="order-item-row" style="margin-bottom: 15px;">
+            <span>Subtotal</span>
+            <div class="dots"></div>
+            <span id="summary-subtotal">$0.00</span>
+          </div>
+          <div class="order-item-row" style="margin-bottom: 15px;">
+            <span>Shipping</span>
+            <div class="dots"></div>
+            <span>Free</span>
+          </div>
+          <div class="order-item-row" style="margin-bottom: 15px;">
+            <span>Tax (10%)</span>
+            <div class="dots"></div>
+            <span id="summary-tax">$0.00</span>
+          </div>
+          <div class="order-divider"></div>
+          <div class="order-item-row total-main" style="margin-top: 10px;">
+            <span style="font-size: 1.25rem; font-weight: 700;">Total</span>
+            <div class="dots"></div>
+            <span id="summary-total" style="font-size: 1.25rem; font-weight: 700;">$0.00</span>
+          </div>
+          <button class="btn-checkout" onclick="window.location.href='checkout.html'">Proceed to Checkout</button>
+          <a href="index.html" class="btn-continue" style="display: block; text-align: center; background: none; color: #4A90D9; margin-top: 15px;">Continue Shopping</a>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+  <footer class="footer section" id="contact">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-text">K-market</span>
+        <p>We have products that suit your style and which you're proud to own. From tech to home.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cartItemsContainer = document.getElementById('cart-items');
+      const cartContainer = document.getElementById('cart-container');
+      const summarySubtotal = document.getElementById('summary-subtotal');
+      const summaryTax = document.getElementById('summary-tax');
+      const summaryTotal = document.getElementById('summary-total');
+
+      function renderCart() {
+        const cart = CartManager.getCart();
+        cartItemsContainer.innerHTML = '';
+
+        if (cart.length === 0) {
+          cartContainer.innerHTML = `
+            <div class="empty-cart-msg">
+              <h2>Your cart is empty</h2>
+              <p>Looks like you haven't added any items to the cart yet.</p>
+              <a href="index.html" class="btn-continue">Explore Products</a>
+            </div>
+          `;
+          return;
+        }
+
+        let subtotal = 0;
+
+        cart.forEach((item, index) => {
+          subtotal += item.price * item.quantity;
+          const itemEl = document.createElement('div');
+          itemEl.className = 'cart-item';
+          itemEl.innerHTML = `
+            <img src="${item.img}" alt="${item.name}" onerror="this.src='logo.png'">
+            <div class="cart-item-info">
+              <h3 class="cart-item-title">${item.name}</h3>
+              <p class="cart-item-price">$${item.price.toLocaleString(undefined, {minimumFractionDigits: 2})}</p>
+            </div>
+            <div class="cart-item-actions">
+              <div class="qty-controls">
+                <button class="qty-btn" onclick="updateQty(${index}, -1)">-</button>
+                <input type="text" class="qty-input" value="${item.quantity}" readonly>
+                <button class="qty-btn" onclick="updateQty(${index}, 1)">+</button>
+              </div>
+              <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+            </div>
+          `;
+          cartItemsContainer.appendChild(itemEl);
+        });
+
+        const tax = subtotal * 0.10;
+        const total = subtotal + tax;
+
+        summarySubtotal.textContent = '$' + subtotal.toLocaleString(undefined, {minimumFractionDigits: 2});
+        summaryTax.textContent = '$' + tax.toLocaleString(undefined, {minimumFractionDigits: 2});
+        summaryTotal.textContent = '$' + total.toLocaleString(undefined, {minimumFractionDigits: 2});
+      }
+
+      window.updateQty = (index, change) => {
+        const cart = CartManager.getCart();
+        if (cart[index]) {
+          cart[index].quantity += change;
+          if (cart[index].quantity <= 0) {
+            cart.splice(index, 1);
+          }
+          CartManager.saveCart(cart);
+          renderCart();
+        }
+      };
+
+      window.removeItem = (index) => {
+        const cart = CartManager.getCart();
+        cart.splice(index, 1);
+        CartManager.saveCart(cart);
+        renderCart();
+      };
+
+      renderCart();
+    });
+  </script>
+</body>
+
+</html>
